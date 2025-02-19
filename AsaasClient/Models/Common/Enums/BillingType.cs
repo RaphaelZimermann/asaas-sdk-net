@@ -2,7 +2,7 @@
 {
     public enum BillingType
     {
-        BOLETO, CREDIT_CARD, UNDEFINED
+        BOLETO, CREDIT_CARD, UNDEFINED, PIX
     }
 
     public static class BillingTypeExtension
@@ -12,6 +12,11 @@
             return billingType == BillingType.BOLETO;
         }
 
+        public static bool IsPIX(this BillingType billingType)
+        {
+            return billingType == BillingType.PIX;
+        }
+        
         public static bool IsCreditCard(this BillingType billingType)
         {
             return billingType == BillingType.CREDIT_CARD;
